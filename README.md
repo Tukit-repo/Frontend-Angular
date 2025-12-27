@@ -48,24 +48,6 @@ Este repositorio contiene **exclusivamente el frontend**, desarrollado con **Ang
 
 ---
 
-## 🗺️ Arquitectura del Proyecto
-
-El proyecto sigue una **arquitectura basada en componentes y enrutamiento**, separando responsabilidades para facilitar el mantenimiento y la escalabilidad.
-
-src/
-│
-├── app/
-│ ├── core/ # Servicios globales, modelos, utilidades
-│ ├── shared/ # Componentes reutilizables (UI)
-│ ├── layout/ # Componentes de estructura (header, footer, main)
-│ ├── pages/ # Vistas principales asociadas a rutas
-│ └── routing # Configuración de rutas
-│
-├── assets/ # Imágenes, íconos y recursos visuales
-└── environments/ # Configuración por entorno
-
----
-
 ## 🧠 Principios de Arquitectura
 
 - 🧩 **Componentes pequeños y reutilizables**
