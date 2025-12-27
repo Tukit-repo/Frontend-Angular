@@ -1,0 +1,31 @@
+<header class="site-header">
+    <div class="container">
+        <a routerLink="/" class="logo">
+            <span class="icon-logo">
+                <img src="../../../assets/images/tukitlogofi.png" alt="TukitLogo" height="40">
+            </span>
+            <span class="logo-text">TuKit</span>
+        </a>
+
+        <nav class="main-nav">
+            <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Inicio</a>
+            <a routerLink="/how-it-works">Cómo funciona</a>
+            <a routerLink="/kits">Kits Escolares</a>
+            <a routerLink="/support">Contacto</a>
+        </nav>
+
+        <div class="header-actions">
+            <!-- Search Icon Placeholder -->
+            <button class="icon-btn" aria-label="Buscar">🔍</button>
+
+            <!-- Cart Icon -->
+            <button class="icon-btn cart-btn" routerLink="/checkout" aria-label="Carrito">
+                🛒
+                <span class="badge">0</span>
+            </button>
+
+            <!-- Login / Account -->
+            <a routerLink="/account" class="btn btn-login">Ingresar</a>
+        </div>
+    </div>
+</header>

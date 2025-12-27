@@ -1,0 +1,234 @@
+.kits-page-container {
+    display: flex;
+    max-width: 1200px;
+    margin: 3rem auto;
+    padding: 0 1.5rem;
+    gap: 3rem;
+}
+
+/* Sidebar */
+.filters-sidebar {
+    width: 250px;
+    flex-shrink: 0;
+}
+
+.filter-group {
+    margin-bottom: 2.5rem;
+    border-bottom: 1px solid #f1f3f5;
+    padding-bottom: 1.5rem;
+}
+
+.filter-group:last-child {
+    border-bottom: none;
+}
+
+.filter-group h3 {
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+    color: #0d1b2a;
+}
+
+/* Custom Checkbox */
+.checkbox-container {
+    display: block;
+    position: relative;
+    padding-left: 30px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    font-size: 0.95rem;
+    color: #495057;
+    user-select: none;
+}
+
+.checkbox-container input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+.checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 20px;
+    width: 20px;
+    background-color: #eee;
+    border-radius: 4px;
+}
+
+.checkbox-container:hover input~.checkmark {
+    background-color: #ccc;
+}
+
+.checkbox-container input:checked~.checkmark {
+    background-color: #4361ee;
+}
+
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+.checkbox-container input:checked~.checkmark:after {
+    display: block;
+}
+
+.checkbox-container .checkmark:after {
+    left: 7px;
+    top: 3px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    transform: rotate(45deg);
+}
+
+/* Main Content */
+.kits-content {
+    flex-grow: 1;
+}
+
+.kits-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.kits-header h1 {
+    font-size: 2rem;
+    color: #0d1b2a;
+    margin: 0;
+}
+
+.sort-controls {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.results-count {
+    color: #6c757d;
+    font-size: 0.9rem;
+}
+
+.sort-select {
+    padding: 0.5rem 1rem;
+    border: 1px solid #dee2e6;
+    border-radius: 8px;
+    font-family: inherit;
+    color: #495057;
+}
+
+/* Grid Reused Styles */
+.kits-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 2rem;
+}
+
+/* Should extract these to shared styles later, keeping generic here */
+.kit-card {
+    background: white;
+    border-radius: 1rem;
+    overflow: hidden;
+    position: relative;
+    transition: transform 0.2s, box-shadow 0.2s;
+    border: 1px solid #eaeaea;
+}
+
+.kit-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+}
+
+.badge {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    padding: 0.25rem 0.75rem;
+    background: #ff9f1c;
+    border-radius: 15px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    color: white;
+}
+
+.card-img {
+    height: 220px;
+    background: #f8f9fa;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.card-body {
+    padding: 1.5rem;
+}
+
+.card-body h3 {
+    margin: 0 0 0.5rem 0;
+    font-size: 1.1rem;
+    color: #212529;
+}
+
+.card-body p {
+    color: #6c757d;
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+    min-height: 40px;
+}
+
+.price {
+    display: flex;
+    flex-direction: column;
+}
+
+.old-price {
+    font-size: 0.85rem;
+    text-decoration: line-through;
+    color: #adb5bd;
+}
+
+.new-price {
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #0d1b2a;
+}
+
+.btn-cart {
+    position: absolute;
+    bottom: 1.5rem;
+    right: 1.5rem;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    background: #4361ee;
+    color: white;
+    border: none;
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.btn-cart:hover {
+    background: #3a56d4;
+}
+
+@media (max-width: 900px) {
+    .kits-page-container {
+        flex-direction: column;
+    }
+
+    .filters-sidebar {
+        width: 100%;
+        display: none;
+        /* simple mobile hide for now, could become accordion */
+    }
+}
